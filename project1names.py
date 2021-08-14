@@ -17,6 +17,7 @@ for name in names:
     for oname in names:
         if name==oname:
             not_unique.append(name)
+            names.remove(oname)
 
 if len(not_unique)>=2:
     print(f'the names {not_unique} are shared between two or more students')

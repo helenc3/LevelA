@@ -12,12 +12,21 @@ for x in la:
     scores.append(record)
 
 max=0
+max_rec = []
 for i in scores:
+    if i['total']==max:
+        max=i['total']
+        max_rec.append(i)
     if i['total']>max:
         max=i['total']
+        max_rec = [i]
 
-hm='name'
-z='total'
-for i in scores:
-    if i['total']== max:
-        print(f'{i[hm]} has the highest total score of {i[z]} points')
+for student in max_rec:
+    print(f"{student['name']} has the highest total score of {student['total']} points")
+
+
+#hm='name'
+#z='total'
+#for i in scores:
+#    if i['total']== max:
+#        print(f'{i[hm]} has the highest total score of {i[z]} points')
